@@ -16,7 +16,7 @@ declare module 'egg' {
       ): string;
       /**
        *
-       * @param token jwt token. 
+       * @param token jwt token.
        * @param secretOrPrivateKey secret key。string or { key, passphrase }
        * @param options jwt options。see more details in https://github.com/auth0/node-jsonwebtoken
        * @param callback callback
@@ -31,8 +31,10 @@ declare module 'egg' {
   }
   interface EggAppConfig {
     jwt: {
-      secret: string
-      enable?: boolean
-    }
+      secret: string;
+      enable?: boolean;
+      ignore?: string | RegExp | Function | Array;
+      match?: string | RegExp | Function | Array;
+    };
   }
 }
